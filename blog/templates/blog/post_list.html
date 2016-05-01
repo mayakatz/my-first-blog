@@ -6,15 +6,12 @@
         <div>
             <h1><a href="http://mayakatz.pythonanywhere.com/">My Blog</a></h1>
         </div>
-
-        <div>
-            <h2><a href="http://mayakatz.pythonanywhere.com/admin/blog/post/1/change/">My first post</a></h2>
-            <p>published: 1.5.2016, 14:30</p>
-        </div>
-
-        <div>
-            <h2><a href="http://mayakatz.pythonanywhere.com/admin/blog/post/2/change/">My second post</a></h2>
-            <p>published: 1.5.2016, 15:00</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
